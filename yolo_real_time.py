@@ -3,9 +3,9 @@ import numpy as np
 import time
 
 # Load Yolo
-net = cv2.dnn.readNet("D:/Documents/PycharmProjects/object/weights/yolov3.weights","D:/Documents/PycharmProjects/object/names-and-cfg/yolov3.cfg")
+net = cv2.dnn.readNet("D:/Documents/PycharmProjects/object-detection/weights/yolov3-tiny.weights","D:/Documents/PycharmProjects/object-detection/names-and-cfg/yolov3-tiny.cfg")
 classes = []
-with open("D:/Documents/PycharmProjects/object/names-and-cfg/coco.names", 'r') as f:
+with open("D:/Documents/PycharmProjects/object-detection/names-and-cfg/coco.names", 'r') as f:
     classes = [line.strip() for line in f.readlines()]
 layer_names = net.getLayerNames()
 output_layers = [layer_names[i[0] - 1] for i in net.getUnconnectedOutLayers()]
